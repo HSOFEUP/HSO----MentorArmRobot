@@ -1,0 +1,46 @@
+[PROJECT]
+Target=main.HEX
+Development_Mode=2
+Processor=0x877A
+Processor_Text=PIC16F877A
+ToolSuite=CCS
+
+[Directories]
+Include=
+Library=
+LinkerScript=
+
+[Target Data]
+FileList=main.c
+BuildTool=C-COMPILER
+OptionString=+FM
+AdditionalOptionString=
+BuildRequired=1
+
+[main.c]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+
+[mru-list]
+1=main.c
+
+[Windows]
+0=0000 main.c 0 0 796 451 3 0
+
+[Opened Files]
+1=D:\Robot_Mentor\Robot_Master\Code_Master\main.c
+2=E:\Programs_Xp\Electronics\PICC_2\PICC\devices\16f877a.h
+3=D:\Robot_Mentor\Robot_Master\Code_Master\flex_lcd.c
+4=E:\Programs_Xp\Electronics\PICC_2\PICC\drivers\stdio.h
+5=E:\Programs_Xp\Electronics\PICC_2\PICC\drivers\string.h
+6=E:\Programs_Xp\Electronics\PICC_2\PICC\drivers\stddef.h
+7=E:\Programs_Xp\Electronics\PICC_2\PICC\drivers\ctype.h
+8=E:\Programs_Xp\Electronics\PICC_2\PICC\drivers\stdlib.h
+9=
+[Units]
+Count=1
+1=main.c (main)

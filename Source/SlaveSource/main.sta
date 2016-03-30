@@ -1,0 +1,62 @@
+
+ROM used: 322 (4%)
+          322 (4%) including unused fragments
+
+          0 Average locations per line
+          1 Average locations per statement
+
+RAM used: 29 (8%) at main() level
+          31 (8%) worst case
+
+Stack used: 2 worst case (out of 7 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  237    96  18  main.c
+  277     0   0  E:\PROGRA~1\ELECTR~1\PICC_2\PICC\devices\16f876a.h
+  180    63  12  E:\PROGRA~1\ELECTR~1\PICC_2\PICC\drivers\lcd.c
+ 1493   380  71  E:\PROGRA~1\ELECTR~1\PICC_2\PICC\drivers\stdlib.h
+   28     0   0  E:\PROGRA~1\ELECTR~1\PICC_2\PICC\drivers\stddef.h
+  417     0   0  E:\PROGRA~1\ELECTR~1\PICC_2\PICC\drivers\string.h
+   28     0   0  E:\PROGRA~1\ELECTR~1\PICC_2\PICC\drivers\ctype.h
+   37     0   0  E:\PROGRA~1\ELECTR~1\PICC_2\PICC\drivers\stdio.h
+----- -----
+ 2697   539 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+ Inline        1             @delay_ms1
+ Inline        1             @I2C_WRITE_1
+0     66  20   0   323  3.2  ssp_interupt
+0     22   7   1   151  3.1  slave_id
+0     20   6   0    48  1.1  analog_config
+0     37  11   0   127  1.3  port_configure
+0      4   1   0    48  1.1  stop_engine
+0      6   2   0    48  1.1  move_up
+0      6   2   0    48  1.1  move_down
+0     18   6   0    54  1.5  analog_read
+0     90  28   0   584  5.7  MAIN
+
+Program metrics:
+    Functions               9
+    Statements              539
+    Comments                715
+    Volume (V)              2267
+    Difficilty (D)          19.3
+    Effort to implement (E) 43720
+    Time to implement (T)   40 minutes
+    Est Delivered Bugs (B)  0
+    Cyclomatic Complexity   10
+    Maintainability (MI)    123
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-00034    49  0  
+00035-007FF   269  1726  
+00800-00FFF     0  2048  
+01000-017FF     0  2048  
+01800-01FFF     0  2048  
+
+
+

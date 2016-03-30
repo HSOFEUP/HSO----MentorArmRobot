@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="prjARMPower">
+</Property><Property Name="Solution File" Value="C:\Users\Pedro\Desktop\ARMPower v2.0\prjARMPower.sln">
+</Property><Property Name="User Options File" Value="C:\Users\Pedro\Desktop\ARMPower v2.0\prjARMPower.suo">
+</Property><Property Name="Date" Value="quinta-feira, 11 de Setembro de 2008">
+</Property><Property Name="Time" Value="23:47">
+</Property><Property Name="Log Number" Value="2">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="prjARMPower.sln" Description="File successfully backed up as C:\Users\Pedro\Desktop\ARMPower v2.0\Backup1\prjARMPower.sln">
+</Event><Event ErrorLevel="0" Project="" Source="prjARMPower.suo" Description="File successfully backed up as C:\Users\Pedro\Desktop\ARMPower v2.0\Backup1\prjARMPower.suo">
+</Event><Event ErrorLevel="0" Project="prjARMPower" Source="prjARMPower.vbproj" Description="Project file successfully backed up as C:\Users\Pedro\Desktop\ARMPower v2.0\Backup1\prjARMPower.vbproj">
+</Event><Event ErrorLevel="0" Project="prjARMPower" Source="prjARMPower.vbproj.user" Description="Project user file successfully backed up as C:\Users\Pedro\Desktop\ARMPower v2.0\Backup1\prjARMPower.vbproj.user">
+</Event><Event ErrorLevel="0" Project="prjARMPower" Source="AssemblyInfo.vb" Description="File successfully backed up as C:\Users\Pedro\Desktop\ARMPower v2.0\Backup1\AssemblyInfo.vb">
+</Event><Event ErrorLevel="0" Project="prjARMPower" Source="Form1.vb" Description="File successfully backed up as C:\Users\Pedro\Desktop\ARMPower v2.0\Backup1\Form1.vb">
+</Event><Event ErrorLevel="0" Project="prjARMPower" Source="Form1.resx" Description="File successfully backed up as C:\Users\Pedro\Desktop\ARMPower v2.0\Backup1\Form1.resx">
+</Event><Event ErrorLevel="0" Project="prjARMPower" Source="prjARMPower.vbproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="prjARMPower" Source="prjARMPower.vbproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="prjARMPower.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="prjARMPower.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="prjARMPower" Source="prjARMPower.vbproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

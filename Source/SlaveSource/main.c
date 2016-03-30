@@ -1,0 +1,236 @@
+#include <16f876a.h>                   
+#fuses XT,NOWDT,NOPROTECT,PUT,NOLVP 
+#device adc=8
+#use delay (clock=4000000)         //  A/D  de 10 bits
+#use i2c(SLAVE, SDA=PIN_C4, SCL=PIN_C3, FORCE_HW)
+#include <lcd.c>
+#use fast_io(C)
+#include <stdlib.h>
+#include <stdio.h>
+
+
+
+
+#define led_spp_on  output_low(PIN_C5)  // Indicador Actividade I2c
+#define led_spp_off output_high(PIN_C5)
+
+
+#locate SSPADD = 0x93
+
+void ini();
+void analog_config();
+void port_configure();
+void stop_engine();
+void stop_engine();
+void move_up ();
+void move_down ();
+void analog_read();
+void slave_id();
+
+byte state;
+int buffer_adc=128;
+int buffer_pos=128;
+
+
+char x=0;
+char y=0;
+char limit_up=1;        //Flag Limite fisico
+char limit_down=1;      
+
+
+
+
+#INT_SSP
+void ssp_interupt ()
+{
+  led_spp_on;
+  state = i2c_isr_state();
+
+ 
+  if(state < 0x80) //Master is sending data
+
+  {
+
+    if(state == 0)
+
+    {
+       buffer_pos = i2c_read();
+    }
+
+    if(state == 1)  //First received byte is address
+
+    {
+
+      buffer_pos = i2c_read();
+
+     
+
+    }
+
+    if(state == 2)  //Second received byte is data
+
+    {
+ buffer_pos = i2c_read();
+    
+
+    }
+
+  }
+
+  if(state == 0x80)  //Master is requesting data
+
+  {
+
+    i2c_write (buffer_adc);
+
+  }
+led_spp_off;
+}
+
+
+void slave_id()
+{
+
+byte id;
+id = input_b();
+id = (id&0b11110000);         // mascara 
+id = id>>3;                   // Rotate para obter sempre um endereco par
+id = id +0xA0;                // Soma A0 range de começo
+sspadd = id;                  // coloca no registo a qual reponde o barramento
+
+}
+
+
+
+
+
+
+
+void ini ()
+{
+
+   lcd_init(); 
+   delay_ms(2);      
+   x=1;y=1;
+   lcd_gotoxy(x,y);
+   printf(lcd_putc,"  Hugo Soares ");
+   x=1;y=2;
+   lcd_gotoxy(x,y);
+   printf(lcd_putc,"**  Apresenta  **");
+   delay_ms(2000);
+   printf(lcd_putc,"\f" ) ;  
+   x=1;y=1;
+   lcd_gotoxy(x,y);
+   printf(lcd_putc,"  Robot Mentor " ) ;
+   x=1;y=2;
+   lcd_gotoxy(x,y);
+   printf(lcd_putc,"*****************" ) ;
+   delay_ms(2000);
+   printf(lcd_putc,"\f" ) ;
+   x=1;y=1;
+   lcd_gotoxy(x,y);
+
+}
+
+
+
+void analog_config()          // Porto An0 analogico
+{
+setup_adc_ports(an0);
+setup_adc(ADC_CLOCK_INTERNAL);
+set_tris_a(0b00000001); 
+}
+
+void port_configure()
+{
+set_tris_c(0b10011000);
+output_low(pin_c6);
+led_spp_on;             // Led visualizaçao Arranque correcto
+delay_ms(200);
+enable_interrupts(INT_SSP);
+enable_interrupts(GLOBAL);
+led_spp_off;
+}
+
+void stop_engine()
+{
+output_high(pin_c6);
+output_low(pin_c1);
+output_low(pin_c2);
+}
+
+void move_up ()
+{
+output_high(pin_c6);
+output_high(pin_c1);
+output_low (pin_c2);
+}
+
+void move_down ()
+{
+output_high(pin_c6);
+output_low(pin_c1);
+output_high(pin_c2);
+}
+
+
+void analog_read()
+{
+set_adc_channel(0);
+delay_us(10);
+buffer_adc=read_adc();
+//delay_us(10);
+//lcd_gotoxy(1,1);
+//delay_ms(10);
+//printf(lcd_putc,"Valor %3u",buffer_adc);
+//lcd_gotoxy(1,2);
+//printf(lcd_putc,"Buffer %3u",buffer_pos);
+
+}
+
+
+
+void main(void)
+
+{
+   slave_id();
+   port_configure();
+   //ini();
+   
+   analog_config();
+   while(true)
+   {
+   analog_read();             // Le posicao corrente
+   
+   
+   if (buffer_adc>250)       // Limite mecanico superior
+   {
+      stop_engine();
+      limit_up=0;
+      limit_down=1;
+   }
+   
+   else if (buffer_adc<10)    // Limite mecanico inferior
+   {
+      stop_engine();
+      limit_down=0;
+      limit_up=1;
+   }
+   else if ((buffer_adc==buffer_pos))  // Para motor em posicao
+   {
+      stop_engine();
+   }
+   else if ((buffer_adc>buffer_pos) && limit_down!=0)
+   {
+      move_down();
+      limit_up=1;             //liberta limite cima
+   }
+   else if ((buffer_adc<buffer_pos) && limit_up!=0)
+   {
+      move_up();
+      limit_down=1;           //liberta limite baixo
+   }
+   
+   }
+
+}

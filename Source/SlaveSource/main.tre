@@ -1,0 +1,15 @@
+ÀÄmain
+   ÃÄMAIN  0/90  Ram=0
+   ³  ÃÄ??0??
+   ³  ÃÄslave_id  0/22  Ram=1
+   ³  ÃÄport_configure  0/37  Ram=0
+   ³  ³  ÀÄ@delay_ms1  (Inline)  Ram=1
+   ³  ÃÄanalog_config  0/20  Ram=0
+   ³  ÃÄanalog_read  0/18  Ram=0
+   ³  ÃÄstop_engine  0/4  Ram=0
+   ³  ÃÄstop_engine  0/4  Ram=0
+   ³  ÃÄstop_engine  0/4  Ram=0
+   ³  ÃÄmove_down  0/6  Ram=0
+   ³  ÀÄmove_up  0/6  Ram=0
+   ÀÄssp_interupt  0/66  Ram=0
+      ÀÄ@I2C_WRITE_1  (Inline)  Ram=1

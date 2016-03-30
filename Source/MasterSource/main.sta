@@ -1,0 +1,96 @@
+
+ROM used: 3021 (37%)
+          3053 (37%) including unused fragments
+
+          1 Average locations per line
+          4 Average locations per statement
+
+RAM used: 56 (15%) at main() level
+          79 (21%) worst case
+
+Stack used: 7 worst case (out of 6 total available)
+
+Lines Stmts  %   Files
+----- ----- ---  -----
+  565   337  42  main.c
+  313     0   0  E:\Programs_Xp\Electronics\PICC_2\PICC\devices\16f877a.h
+  298    79  10  flex_lcd.c
+   37     0   0  E:\Programs_Xp\Electronics\PICC_2\PICC\drivers\stdio.h
+  417     0   0  E:\Programs_Xp\Electronics\PICC_2\PICC\drivers\string.h
+   28     0   0  E:\Programs_Xp\Electronics\PICC_2\PICC\drivers\stddef.h
+   28     0   0  E:\Programs_Xp\Electronics\PICC_2\PICC\drivers\ctype.h
+ 1493   380  48  E:\Programs_Xp\Electronics\PICC_2\PICC\drivers\stdlib.h
+----- -----
+ 3179   796 Total
+
+Page ROM  %  RAM   Vol Diff  Functions:
+---- --- --- ---   --- ----  ----------
+0     21   1   1             @delay_ms1
+0      8   0   0             @const49
+0     41   1   1   328  2.7  lcd_send_nibble
+0     38   1   1   389  2.3  lcd_read_nibble
+ Inline        3   165  3.3  lcd_read_byte
+0     61   2   3   319  4.1  lcd_send_byte
+ Inline        2   411  4.5  lcd_init
+0     38   1   4   386  6.5  lcd_gotoxy
+0     40   1   1   310  4.8  lcd_putc
+ Inline        2             @MUL88
+0    254   8   9  1815 10.5  atoi
+0     51   2   3             @I2C_READ_1
+0     52   2   1             @I2C_WRITE_1
+0     17   1   3   153  3.5  inicbuff
+0    249   8   0   910  1.9  escreve_spp_mano
+0    249   8   0   910  1.9  escreve_spp_cpu
+1    279   9   0  1005  2.4  ler_spp
+0    143   5   4   285  4.6  serial_isr
+ Inline        0  1147  6.3  chose_arm
+0    166   5   1   734  2.4  ini
+0     23   1   0             @const384
+0     24   1   0             @const385
+0      6   0   0             @const386
+0     24   1   0             @const387
+0     25   1   0             @const388
+0     46   2   0   268  1.4  analog_config
+0     40   1   0   335  2.8  set_channel
+0     26   1   2    84  2.0  read_valor
+ Inline        1   239  4.8  show_mano
+0     21   1   3             @DIV88
+0    101   3   6             @PRINTF_D_71
+0     53   2   2             @PRINTF_U_71
+ Inline        1   239  4.8  show_cpu
+ Inline        1   239  4.8  show_adc
+1     46   2   0   434  5.1  select_cpu
+1     10   0   0             @goto11697
+1     77   3   2    53  1.9  send_cpu
+ Inline        2             @PRINTF_U_9600_62_63
+1    593  20   7  2837  7.8  MAIN
+0     25   1   0             @const413
+0     24   1   0             @const414
+0     24   1   0             @const415
+0     28   1   0             @const416
+0     21   1   0             @const417
+0     24   1   0             @const418
+
+Program metrics:
+    Functions               24
+    Statements              796
+    Comments                736
+    Volume (V)              23686
+    Difficilty (D)          97.4
+    Effort to implement (E) 2306800
+    Time to implement (T)   35 hours, 36 minutes
+    Est Delivered Bugs (B)  6
+    Cyclomatic Complexity   75
+    Maintainability (MI)    115
+
+ Segment     Used  Free
+-----------  ----  ----
+00000-00003     4  0  
+00004-00034    49  0  
+00035-007FF  1963  32  
+00800-00FFF  1005  1043  
+01000-017FF     0  2048  
+01800-01FFF     0  2048  
+
+
+
