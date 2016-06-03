@@ -1,6 +1,6 @@
 ## Synopsis
 
-Distributed Controller for Mentor Robot Arm with 6DOF.  
+Distributed Controller for Mentor Robot Arm with 6 DoF.  
 The Slave Cards control each of the axis and the Master Card manages comunications between the Software and each of the Slave Cards and the user Joystick.  
 The user can guide the arm with the Software or using just the Joystick to interact with the arm.  
 The values are show in the Master Card display.
